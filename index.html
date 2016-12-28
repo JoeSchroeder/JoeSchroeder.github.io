@@ -1,7 +1,17 @@
 ---
 layout: default
 ---
+<?php
+$dbhost = $_SERVER['dfsdataguy.cpbbb9ftmmhy.us-west-2.rds.amazonaws.com'];
+$dbport = $_SERVER['3306'];
+$dbname = $_SERVER['DFSData'];
 
+$dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname}";
+$username = $_SERVER['JoeSchroeduh'];
+$password = $_SERVER['07Charger'];
+
+$dbh = new PDO($dsn, $username, $password);
+?>
 <div class="home">
 
   <h1 class="page-heading">Posts</h1>
