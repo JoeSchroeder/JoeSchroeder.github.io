@@ -15,7 +15,7 @@ $dbh = new PDO($dsn, $username, $password);
 <div class="home">
 
   <h1 class="page-heading">Posts</h1>
-  <h1 class="page-heading">print PDO::query("Select * From NAS_LoopData")</h1>
+  print PDO::query("Select * From NAS_LoopData")
 
   <ul class="post-list">
     {% for post in site.posts %}
