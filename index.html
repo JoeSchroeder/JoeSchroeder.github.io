@@ -1,6 +1,19 @@
 ---
 layout: default
 ---
+<?php 
+$connection = mysql_connect("dfsdataguy.cpbbb9ftmmhy.us-west-2.rds.amazonaws.com:3306", "JoeSchroeduh", "07Charger"); 
+if (!$connnection) { die('Could not connect: ' . mysql_error()); } 
+  mysql_select_db("DFSData", $connection); 
+  $result = mysql_query("select * from NAS_LoopData"); 
+  echo "<table> <tr> <th>Field 1</th> <th>Field 2</th> <th>Field 3</th> </tr>"; 
+  while($row = mysql_fetch_array($result)) { echo "<tr valign='top'>"; 
+  echo "<td>" . $row['Field 1'] . "</td>"; 
+  echo "<td>" . $row['Field 2'] . "</td>"; 
+  echo "<td>" . $row['Field 3'] . "</td>"; 
+  echo "</tr>"; } echo "</table>"; 
+  mysql_close($connection); 
+?>
 <div class="home">
 
   <h1 class="page-heading">Posts</h1
